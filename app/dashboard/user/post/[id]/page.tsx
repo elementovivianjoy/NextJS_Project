@@ -71,20 +71,20 @@ export default function PostDetail() {
               avatar: user.avatar || "/default-avatar.png",
             }}
           >
-    <div className="max-w-3xl mx-auto py-10 px-4">
-      <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-      <p className="text-gray-700 mb-6">{post.body}</p>
+        <div className="max-w-3xl mx-auto py-10 px-4">
+          <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
+          <p className="text-gray-700 mb-6 dark:text-white">{post.body}</p>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-3">Comments:</h2>
-      <ul className="space-y-4">
-        {comments.map((comment) => (
-          <li key={comment.id} className="border p-4 rounded shadow-sm">
-            <p className="font-medium">{comment.name} ({comment.email})</p>
-            <p>{comment.body}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+          <h2 className="text-2xl font-semibold mt-8 mb-3">Comments:</h2>
+          <ul className="space-y-4">
+            {comments.map((comment) => (
+              <li key={comment.id} className="border p-4 rounded shadow-sm bg-gray-50 dark:bg-gray-800">
+                <p className="font-medium">{comment.name} ({comment.email})</p>
+                <p className="text-gray-900 dark:text-white">{comment.body}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
     </UsersNavbar></>
   );
 }

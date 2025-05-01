@@ -46,8 +46,8 @@ export default function AdminCharts() {
     ];
 
     return (
-        <div className="mt-8 w-full md:w-auto bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-bold mb-4">Admin Data Visualization</h2>
+        <div className="mt-8 w-full md:w-auto p-6 rounded-lg shadow-md">
+            <h2 className="text-xl text-gray dark:text-white font-bold mb-4">Admin Data Visualization</h2>
             <Chart options={chartOptions} series={chartSeries} type="bar" width="100%" height={350} />
         </div>
     );

@@ -92,7 +92,7 @@ export default function Dashboard() {
           </div>
         </header>
 
-        <div className="max-w-4xl mx-auto py-10 px-4">
+        <div className="max-w-4xl mx-auto py-10 px-4 bg-white-900 dark:bg-gray">
           <h1 className="text-2xl font-bold mb-6">Welcome, {user.name}!</h1>
           <ul className="space-y-6">
             {posts.map((post) => {
@@ -104,10 +104,10 @@ export default function Dashboard() {
                       {post.title}
                     </h2>
                   </Link>
-                  <p className="text-sm text-gray-500 mb-1">
+                  <p className="text-sm text-gray-500 dark:text-white mb-1">
                     Posted by: <strong>{postAuthor?.name}</strong> (@{postAuthor?.username})
                   </p>
-                  <p className="text-gray-700 mt-1">{post.body}</p>
+                  <p className="text-gray-700 dark:text-white mt-1">{post.body}</p>
                 </li>
               );
             })}

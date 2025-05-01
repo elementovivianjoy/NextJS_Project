@@ -85,7 +85,7 @@ export default function HomePage() {
           <h1 className="text-4xl font-extrabold text-blue-600 inline-block">
             User List
           </h1>
-          <p className="text-gray-600 mt-2">
+          <p className="text-gray-600 dark:text-white mt-2">
             View user details with their contact information.
           </p>
 
@@ -94,27 +94,27 @@ export default function HomePage() {
             <input
               type="text"
               placeholder="Search by name, username or city..."
-              className="w-full max-w-md px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-blue-500"
+              className="w-full max-w-md px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 text-gray-600 dark:text-white"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
 
           {/* Users List */}
-          <div className="overflow-x-auto bg-white shadow-lg rounded-lg w-full">
-            <table className="table-auto divide-y divide-gray-200 w-full">
-              <thead className="bg-gray-100">
+          <div className="overflow-x-auto shadow-lg rounded-lg w-full">
+            <table className="table-auto divide-y divide-gray-200 w-full bg-white-900 dark:bg-gray">
+              <thead className="bg-white-900 dark:bg-gray">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 dark:text-white uppercase tracking-wider">
                     Name
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 dark:text-white uppercase tracking-wider">
                     Username
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 dark:text-white uppercase tracking-wider">
                     Address
                   </th>
-                  <th className="px-6 py-3 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-right text-xs font-medium text-gray-600 dark:text-white uppercase tracking-wider">
                     Action
                   </th>
                 </tr>
@@ -122,14 +122,14 @@ export default function HomePage() {
               <tbody className="divide-y divide-gray-200">
                 {filteredUsers.length > 0 ? (
                   filteredUsers.map((user) => (
-                    <tr key={user.id} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                    <tr key={user.id} className="hover:bg-gray-50 dark:hover:bg-white">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium  text-gray-600 dark:text-white">
                         {user.name}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-white">
                         @{user.username}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-white">
                         {user.address.city}, {user.address.street}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm">
@@ -144,7 +144,7 @@ export default function HomePage() {
                   ))
                 ) : (
                   <tr>
-                    <td colSpan={4} className="text-center text-gray-500 py-4">
+                    <td colSpan={4} className="text-center text-gray-600 dark:text-white py-4">
                       No users found.
                     </td>
                   </tr>

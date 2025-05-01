@@ -72,30 +72,30 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-md mt-10">
-        <h2 className="text-2xl font-bold text-center mb-4">Login</h2>
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+      <div className="max-w-md w-full bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mt-10">
+        <h2 className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">Login</h2>
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block">Email</label>
+            <label htmlFor="email" className="block text-gray-900 dark:text-white">Email</label>
             <input
               id="email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-md"
+              className="w-full p-2 border border-gray-300 rounded-md text-gray-900 dark:text-white"
               required
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="block">Password</label>
+            <label htmlFor="password" className="block text-gray-900 dark:text-white">Password</label>
             <input
               id="password"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-md"
+              className="w-full p-2 border border-gray-300 rounded-md text-gray-900 dark:text-white bg-white dark:bg-dark"
               required
             />
           </div>
@@ -110,7 +110,7 @@ export default function LoginForm() {
           </button>
         </form>
 
-        <p className="mt-4 text-sm text-center">
+        <p className="mt-4 text-sm text-center text-gray-900 dark:text-white">
           Don’t have an account?{" "}
           <a href="/register" className="text-blue-600 hover:underline">
             Register here

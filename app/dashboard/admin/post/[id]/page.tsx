@@ -112,11 +112,11 @@ export default function PostDetail() {
           <div className="mb-6">
             <h1 className="text-3xl font-bold text-blue-700 mb-2">{post.title}</h1>
             {author && (
-              <p className="text-sm text-gray-600 mb-2">
+              <p className="text-sm text-gray-600 dark:text-white mb-2">
                 Posted by <span className="font-medium">{author.name}</span> (@{author.username})
               </p>
             )}
-            <p className="text-gray-800">{post.body}</p>
+            <p className="text-gray-800 dark:text-white">{post.body}</p>
           </div>
 
           <div>
@@ -128,7 +128,7 @@ export default function PostDetail() {
                 {comments.map((comment) => (
                   <li key={comment.id} className="border p-4 rounded shadow-sm">
                     <p className="font-medium">{comment.name} ({comment.email})</p>
-                    <p className="text-gray-700">{comment.body}</p>
+                    <p className="text-gray-700 dark:text-white">{comment.body}</p>
                   </li>
                 ))}
               </ul>

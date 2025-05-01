@@ -1,25 +1,48 @@
 
-
-
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import * as React from "react"
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes"
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const Navbar = () => {
+  const { setTheme } = useTheme();
+  const [dropdownOpen, setDropdownOpen] = React.useState(false);
+  const toggleDropdown = () => setDropdownOpen((prev) => !prev);
+  const [isScrolled, setIsScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header>
-      <nav className="border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+    <header className="sticky top-0 z-50">
+      <nav className={`border-gray-200 px-4 lg:px-6 ${isScrolled ? "py-1 shadow-md" : "py-3 shadow-sm"
+        } dark:bg-gray-800 bg-white transition-all duration-300`}>
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <img
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="mr-3 h-6 sm:h-9"
-              alt="Logo"
-            />
+            <div className="flex shrink-0 items-center">
+              <img
+                className="h-8 w-auto"
+                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                alt="Your Company"
+              />
+            </div>
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-              Flowbite
+              HelloWorld
             </span>
           </Link>
 
@@ -78,13 +101,13 @@ export const Navbar = () => {
             <Link href="/" className="text-gray-700 dark:text-white z-50">
               Home
             </Link>
-            <Link href="/about" className="text-gray-400 hover:text-white z-50">
+            <Link href="#about" className="text-gray-400 hover:text-white z-50">
               About
             </Link>
-            <Link href="/team" className="text-gray-400 hover:text-white z-50">
+            <Link href="#team" className="text-gray-400 hover:text-white z-50">
               Team
             </Link>
-            <Link href="/contact" className="text-gray-400 hover:text-white z-50">
+            <Link href="#contact" className="text-gray-400 hover:text-white z-50">
               Contact
             </Link>
           </div>
@@ -103,6 +126,54 @@ export const Navbar = () => {
             >
               Register
             </Link>
+
+            <div className="relative z-50">
+              <Button
+                onClick={toggleDropdown}
+                variant="outline"
+                size="icon"
+                aria-expanded={dropdownOpen ? "true" : "false"}
+                className="flex items-center justify-center z-50"
+              >
+                <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+
+              {dropdownOpen && (
+                <div
+                  className="absolute right-0 z-50 w-40 origin-top-right divide-y divide-gray-100 rounded-md bg-white dark:bg-white-900 shadow-lg ring-1 ring-black/5 focus:outline-none mt-4"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="menu-button"
+                >
+                  <div className="py-1" role="none">
+                    <Button
+                      onClick={() => {
+                        setTheme("light");
+                        setDropdownOpen(false);
+                      }}
+                      className="block bg-white dark:bg-white-900 w-full text-left px-4 py-2 text-sm text-gray-700 z-50 mt-4"
+                      role="menuitem"
+                    >
+                      Light
+                    </Button>
+                    <Button
+                      onClick={() => {
+                        setTheme("dark");
+                        setDropdownOpen(false);
+                      }}
+                      className="block bg-white dark:bg-white-900 w-full text-left px-4 py-2 text-sm text-gray-700 z-50"
+                      role="menuitem"
+                    >
+                      Dark
+                    </Button>
+
+                  </div>
+                </div>
+              )}
+            </div>
+
           </div>
         </div>
       </nav>
