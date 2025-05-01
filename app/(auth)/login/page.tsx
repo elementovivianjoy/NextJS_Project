@@ -95,7 +95,7 @@ export default function LoginForm() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-md text-gray-900 dark:text-white bg-white dark:bg-dark"
+              className="w-full p-2 border border-gray-300 rounded-md text-gray-900 dark:text-white"
               required
             />
           </div>
