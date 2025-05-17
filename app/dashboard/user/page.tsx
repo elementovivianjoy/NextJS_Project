@@ -44,7 +44,7 @@ const RegularUserDashboard = () => {
           avatar: user.avatar || "/default-avatar.png",
         }}
       />
-      <Hero />
+      <Hero id="hero"/>
       <Postlist id="postlist" />
       <Team id="team" />
       <About id="about" />

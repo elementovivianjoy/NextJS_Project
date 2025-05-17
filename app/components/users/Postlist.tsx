@@ -55,8 +55,8 @@ export const Postlist = ({ id }: PostProps) => {
             const newPost = localStorage.getItem("newPost");
             if (newPost) {
                 const parsedPost = JSON.parse(newPost);
-                userPosts.unshift(parsedPost); // Add new post to the top
-                localStorage.removeItem("newPost"); // Clear after use
+                userPosts.unshift(parsedPost); 
+                localStorage.removeItem("newPost");
             }
 
             setPosts(userPosts);
@@ -104,7 +104,7 @@ export const Postlist = ({ id }: PostProps) => {
             <section id={id} className="bg-white dark:bg-gray-900">
                 <div className="max-w-4xl mx-auto py-10 px-4 w-full">
                     <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-                        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our Blogs</h2>
+                        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Posts Lists</h2>
                         <p className="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Welcome to the heart of my blog, where stories of exploration, innovation, and personal growth come to life.</p>
                     </div>
                     <h1 className="text-2xl font-bold mb-6">Welcome, {user.name}!</h1>
@@ -113,7 +113,7 @@ export const Postlist = ({ id }: PostProps) => {
                     {/* Create Post Button */}
                     <Link
                         href="/dashboard/user/post/create_posts"
-                        className="bg-blue-600 text-white px-6 py-3 rounded-md mb-6 inline-block"
+                        className="bg-green-600 text-white px-6 py-3 rounded-md mb-6 inline-block"
                     >
                         Create Post
                     </Link>
@@ -141,7 +141,7 @@ export const Postlist = ({ id }: PostProps) => {
                                         <h3>
                                             <Link
                                                 href={`/dashboard/user/post/${post.id}`}
-                                                className="font-bold text-blue-600 dark:text-white text-sm sm:text-2xl block mb-4 hover:text-primary dark:hover:text-primary"
+                                                className="font-bold text-green-600 dark:text-white text-sm sm:text-2xl block mb-4 hover:text-primary dark:hover:text-primary"
                                             >
                                                 {post.title}
                                             </Link>
@@ -171,7 +171,7 @@ export const Postlist = ({ id }: PostProps) => {
 
                                         <Link
                                             href={`/dashboard/user/post/edit/${post.id}`}
-                                            className="text-blue-500 hover:text-blue-600 font-medium text-sm mr-5"
+                                            className="text-green-500 hover:text-green-600 font-medium text-sm mr-5"
                                         >
                                             Edit
                                         </Link>

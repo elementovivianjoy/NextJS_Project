@@ -1,5 +1,8 @@
-'use client';
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
+import { FiUser, FiMail, FiPhone, FiMessageSquare, FiSend } from "react-icons/fi";
 
 interface ContactProps {
   id?: string;
@@ -7,164 +10,199 @@ interface ContactProps {
 
 export const Contact = ({ id }: ContactProps) => {
   return (
-    <section id={id} className="bg-gray-50 dark:bg-gray-900">
-      <div className="isolate bg-gray-50 dark:bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
-        <div
-          className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
-          aria-hidden="true"
+    <section id={id} className="relative bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 py-24">
+      {/* Decorative Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 transform">
+          <div className="w-[40rem] h-[40rem] rounded-full bg-gradient-to-tr from-green-500/10 to-purple-500/10 blur-3xl" />
+        </div>
+        <div className="absolute bottom-0 right-0">
+          <div className="w-[30rem] h-[30rem] rounded-full bg-gradient-to-bl from-blue-500/10 to-cyan-500/10 blur-3xl" />
+        </div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div
-            className="relative left-1/2 -z-10 aspect-1155/678 w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]"
-            style={{
-              clipPath:
-                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-            }}
-          ></div>
-        </div>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 dark:text-white sm:text-5xl">
-            Contact Us
+          <span className="inline-block px-4 py-1.5 mb-4 text-sm font-semibold rounded-full 
+                         bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
+            Get in Touch
+          </span>
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Let&#39;s Start a Conversation
           </h2>
-          <p className="mt-2 text-lg/8 text-gray-600">
-            Aute magna irure deserunt veniam aliqua magna enim voluptate.
+          <p className="text-lg text-gray-600 dark:text-gray-300">
+            Have questions? We&#39;d love to hear from you. Send us a message and we&#39;ll respond as soon as possible.
           </p>
-        </div>
-          <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20 bg-gray-50 dark:bg-gray-900">
-            <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-              <div>
-                <label htmlFor="first-name" className="block text-sm/6 font-semibold text-gray-900 dark:text-white">
-                  First name
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    type="text"
-                    name="first-name"
-                    id="first-name"
-                    autoComplete="given-name"
-                    className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 dark:text-gray outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                  />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="last-name" className="block text-sm/6 font-semibold text-gray-900 dark:text-white">
-                  Last name
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    type="text"
-                    name="last-name"
-                    id="last-name"
-                    autoComplete="family-name"
-                    className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 dark:text-gray outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                  />
-                </div>
-              </div>
-              <div className="sm:col-span-2">
-                <label htmlFor="email" className="block text-sm/6 font-semibold text-gray-900 dark:text-white">
-                  Email
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    autoComplete="email"
-                    className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 dark:text-gray outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                  />
-                </div>
-              </div>
-              <div className="sm:col-span-2">
-                <label htmlFor="phone-number" className="block text-sm/6 font-semibold text-gray-900 dark:text-white">
-                  Phone number
-                </label>
-                <div className="mt-2.5">
-                  <div className="flex rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
-                    <div className="grid shrink-0 grid-cols-1 focus-within:relative">
-                      <select
-                        id="country"
-                        name="country"
-                        autoComplete="country"
-                        aria-label="Country"
-                        className="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-7 pl-3.5 text-base text-gray-500 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                      >
-                        <option>PH</option>
-                        <option>US</option>
-                        <option>CA</option>
-                        <option>EU</option>
-                      </select>
-                      <svg
-                        className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4"
-                        viewBox="0 0 16 16"
-                        fill="currentColor"
-                        aria-hidden="true"
-                        data-slot="icon"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
+        </motion.div>
+
+        {/* Contact Form Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="max-w-2xl mx-auto"
+        >
+          <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-2xl shadow-xl p-8 border border-gray-200 dark:border-gray-700">
+            <form className="space-y-6">
+              {/* Name Fields */}
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                    First Name
+                  </label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <FiUser className="text-gray-400" />
                     </div>
                     <input
                       type="text"
-                      name="phone-number"
-                      id="phone-number"
-                      placeholder="123-456-7890"
-                      className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 dark:text-gray placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                      className={inputClass}
+                      placeholder="John"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                    Last Name
+                  </label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <FiUser className="text-gray-400" />
+                    </div>
+                    <input
+                      type="text"
+                      className={inputClass}
+                      placeholder="Doe"
                     />
                   </div>
                 </div>
               </div>
-              <div className="sm:col-span-2">
-                <label htmlFor="message" className="block text-sm/6 font-semibold text-gray-900 dark:text-white">
-                  Message
+
+              {/* Email Field */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                  Email Address
                 </label>
-                <div className="mt-2.5">
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <FiMail className="text-gray-400" />
+                  </div>
+                  <input
+                    type="email"
+                    className={inputClass}
+                    placeholder="john@example.com"
+                  />
+                </div>
+              </div>
+
+              {/* Phone Field */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                  Phone Number
+                </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <FiPhone className="text-gray-400" />
+                  </div>
+                  <div className="flex rounded-lg shadow-sm">
+                    <label htmlFor="country" className="sr-only">
+                      Country
+                    </label>
+                    <select
+                      id="country"
+                      name="country"
+                      className="rounded-l-lg border-r-0 border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-300 text-sm px-3"
+                      aria-label="Country"
+                    >
+                      <option>PH</option>
+                      <option>US</option>
+                      <option>UK</option>
+                    </select>
+                    <input
+                      type="tel"
+                      className={`${inputClass} rounded-l-none pl-3`}
+                      placeholder="(123) 456-7890"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Message Field */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
+                  Your Message
+                </label>
+                <div className="relative">
+                  <div className="absolute top-3 left-3 pointer-events-none">
+                    <FiMessageSquare className="text-gray-400" />
+                  </div>
                   <textarea
-                    name="message"
-                    id="message"
                     rows={4}
-                    placeholder="Write here..."
-                    className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 dark:text-gray outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                  ></textarea>
+                    className={`${inputClass} pt-2`}
+                    placeholder="Write your message here..."
+                  />
                 </div>
               </div>
-              <div className="flex gap-x-4 sm:col-span-2">
-                <div className="flex h-6 items-center">
-                  <button
-                    type="button"
-                    className="flex w-8 flex-none cursor-pointer rounded-full bg-gray-200 p-px ring-1 ring-gray-900/5 transition-colors duration-200 ease-in-out ring-inset focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    role="switch"
-                    aria-checked="false"
-                    aria-labelledby="switch-1-label"
-                  >
-                    <span className="sr-only text-gray-600 dark:text-gray">Agree to policies</span>
-                    <span
-                      aria-hidden="true"
-                      className="size-4 translate-x-0 transform rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition duration-200 ease-in-out"
-                    ></span>
-                  </button>
+
+              {/* Privacy Policy Checkbox */}
+              <div className="flex items-start">
+                <div className="flex items-center h-5">
+                  <input
+                    type="checkbox"
+                    className="w-4 h-4 rounded border-gray-300 text-green-600 focus:ring-green-500 dark:border-gray-600 dark:bg-gray-700"
+                  />
                 </div>
-                <label className="text-sm/6 text-gray-600 dark:text-gray bg-gray-50 dark:bg-gray-900" id="switch-1-label">
-                  By selecting this, you agree to our{" "}
-                  <a href="#" className="font-semibold text-indigo-600">
-                    privacy&nbsp;policy
-                  </a>
-                  .
-                </label>
+                <div className="ml-3">
+                  <label className="text-sm text-gray-600 dark:text-gray-300">
+                    I agree to the{" "}
+                    <a href="#" className="text-green-600 hover:text-green-500">
+                      privacy policy
+                    </a>
+                  </label>
+                </div>
               </div>
-            </div>
-            <div className="mt-10">
-              <button
+
+              {/* Submit Button */}
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="w-full inline-flex items-center justify-center px-6 py-3 rounded-lg
+                         text-white font-medium
+                         bg-gradient-to-r from-green-600 to-green-700
+                         hover:from-green-700 hover:to-green-800
+                         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500
+                         transform transition-all duration-200
+                         shadow-lg hover:shadow-xl"
               >
-                Send Messages
-              </button>
-            </div>
-          </form>
+                <FiSend className="mr-2" />
+                Send Message
+              </motion.button>
+            </form>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
 };
+
+const inputClass = `
+  block w-full pl-10 pr-4 py-3 rounded-lg
+  border border-gray-300 dark:border-gray-600
+  bg-white dark:bg-gray-700
+  text-gray-900 dark:text-white
+  placeholder-gray-400 dark:placeholder-gray-300
+  focus:ring-2 focus:ring-green-500 focus:border-green-500
+  hover:border-gray-400 dark:hover:border-gray-500
+  transition-all duration-200
+  shadow-sm
+`;
+
+export default Contact;
