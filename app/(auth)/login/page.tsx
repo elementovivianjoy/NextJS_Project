@@ -1,11 +1,23 @@
-
 'use client';
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
+// Assuming the password is admin123 and email is admin@admin.com
+// This function simulates a login process. In a real application, you would replace this with an API call.
+// It checks if the user is an admin or a regular user based on the email and password provided.  
+// If the user is found, it returns a success response with user details. Otherwise, it returns an error message.
+// The function also handles the case where the user is an admin by checking for specific credentials.
+// The function uses the Fetch API to get user data from a placeholder API.
+
 async function loginUser(email: string, password: string) {
+  // Admin check credential 
+  // In a real application, you would check against a database or an authentication service
+  // Here, we are simulating an admin login with hardcoded credentials
+  // In a real application, you would hash the password and compare it with the stored hash
+  // This is just for demonstration purposes
+  // In a real application, you would replace this with an API call to your authentication service
   if (email === "admin@admin.com" && password === "admin123") {
     return {
       success: true,
@@ -19,24 +31,30 @@ async function loginUser(email: string, password: string) {
     };
   }
 
-  const response = await fetch("https://jsonplaceholder.typicode.com/users");
-  const users = await response.json();
-  const user = users.find((u: { email: string }) => u.email === email);
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const users = await response.json();
+    const user = users.find((u: { email: string }) => u.email === email);
 
-  if (user) {
-    if (password === "password123") {
-      return {
-        success: true,
-        user: {
-          ...user,
-          role: "user",
-        },
-      };
+    // Assuming the password is the same as the username for this example
+    // In a real application, you would hash the password and compare it with the stored hash
+    if (user) {
+      if (password === user.username) {  
+        return {
+          success: true,
+          user: {
+            ...user,
+            role: "user",
+          },
+        };
+      } else {
+        return { success: false, message: "Incorrect password" };
+      }
     } else {
-      return { success: false, message: "Incorrect password" };
+      return { success: false, message: "User not found" };
     }
-  } else {
-    return { success: false, message: "User not found" };
+  } catch {
+    return { success: false, message: "Error fetching user data" };
   }
 }
 
@@ -104,7 +122,7 @@ export default function LoginForm() {
 
           <button
             type="submit"
-            className="w-full bg-green-600 text-white p-2 rounded-md hover:bg-green-700 transition"
+            className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-green-700 transition"
           >
             Login
           </button>
@@ -112,18 +130,18 @@ export default function LoginForm() {
 
         <p className="mt-4 text-sm text-center text-gray-900 dark:text-white">
           Don’t have an account?{" "}
-          <a href="/register" className="text-green-600 hover:underline">
+          <a href="/register" className="text-blue-500 hover:underline">
             Register here
           </a>
         </p>
 
         <p className="mt-4 text-sm text-center">
           <Link
-          href="/"
-          className="inline-block mt-4 mb-6 text-green-600 hover:text-green-800"
-        >
-        Go Home
-        </Link>
+            href="/"
+            className="inline-block mt-4 mb-6 text-blue-500 hover:text-green-800"
+          >
+            Go Home
+          </Link>
         </p>
       </div>
     </div>

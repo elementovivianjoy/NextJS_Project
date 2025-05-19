@@ -14,7 +14,7 @@ export const Contact = ({ id }: ContactProps) => {
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 transform">
-          <div className="w-[40rem] h-[40rem] rounded-full bg-gradient-to-tr from-green-500/10 to-purple-500/10 blur-3xl" />
+          <div className="w-[40rem] h-[40rem] rounded-full bg-gradient-to-tr from-blue-500/10 to-purple-500/10 blur-3xl" />
         </div>
         <div className="absolute bottom-0 right-0">
           <div className="w-[30rem] h-[30rem] rounded-full bg-gradient-to-bl from-blue-500/10 to-cyan-500/10 blur-3xl" />
@@ -30,7 +30,7 @@ export const Contact = ({ id }: ContactProps) => {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="inline-block px-4 py-1.5 mb-4 text-sm font-semibold rounded-full 
-                         bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
+                         bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
             Get in Touch
           </span>
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -156,13 +156,13 @@ export const Contact = ({ id }: ContactProps) => {
                 <div className="flex items-center h-5">
                   <input
                     type="checkbox"
-                    className="w-4 h-4 rounded border-gray-300 text-green-600 focus:ring-green-500 dark:border-gray-600 dark:bg-gray-700"
+                    className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700"
                   />
                 </div>
                 <div className="ml-3">
                   <label className="text-sm text-gray-600 dark:text-gray-300">
                     I agree to the{" "}
-                    <a href="#" className="text-green-600 hover:text-green-500">
+                    <a href="#" className="text-blue-600 hover:text-blue-500">
                       privacy policy
                     </a>
                   </label>
@@ -176,9 +176,9 @@ export const Contact = ({ id }: ContactProps) => {
                 type="submit"
                 className="w-full inline-flex items-center justify-center px-6 py-3 rounded-lg
                          text-white font-medium
-                         bg-gradient-to-r from-green-600 to-green-700
-                         hover:from-green-700 hover:to-green-800
-                         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500
+                         bg-gradient-to-r from-blue-600 to-blue-700
+                         hover:from-blue-700 hover:to-blue-800
+                         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
                          transform transition-all duration-200
                          shadow-lg hover:shadow-xl"
               >
@@ -199,7 +199,7 @@ const inputClass = `
   bg-white dark:bg-gray-700
   text-gray-900 dark:text-white
   placeholder-gray-400 dark:placeholder-gray-300
-  focus:ring-2 focus:ring-green-500 focus:border-green-500
+  focus:ring-2 focus:ring-blue-500 focus:border-blue-500
   hover:border-gray-400 dark:hover:border-gray-500
   transition-all duration-200
   shadow-sm

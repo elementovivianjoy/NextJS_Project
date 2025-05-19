@@ -39,7 +39,7 @@ export const About = ({ id }: AboutProps) => {
             </div>
             
             {/* Decorative Elements */}
-            <div className="absolute -bottom-8 -right-8 w-72 h-72 bg-green-500/10 rounded-full blur-3xl" />
+            <div className="absolute -bottom-8 -right-8 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
             <div className="absolute -top-8 -left-8 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl" />
           </motion.div>
 
@@ -56,12 +56,12 @@ export const About = ({ id }: AboutProps) => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mb-8"
             >
-              <span className="inline-block px-4 py-2 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-sm font-semibold tracking-wide uppercase mb-4">
+              <span className="inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-semibold tracking-wide uppercase mb-4">
                 About Us
               </span>
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white leading-tight">
                 Dynamic Web Application using{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-purple-500">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
                   Next.js and Tailwind CSS
                 </span>
               </h2>
@@ -105,7 +105,7 @@ export const About = ({ id }: AboutProps) => {
                     className="flex items-center space-x-2"
                   >
                     <svg
-                      className="w-5 h-5 text-green-500"
+                      className="w-5 h-5 text-blue-500"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"

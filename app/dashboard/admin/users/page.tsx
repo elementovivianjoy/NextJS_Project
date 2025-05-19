@@ -39,7 +39,7 @@ export default function HomePage() {
   if (isLoading)
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <p className="text-lg font-medium text-green-600 animate-pulse">
+        <p className="text-lg font-medium text-blue-600 animate-pulse">
           Loading users...
         </p>
       </div>
@@ -82,7 +82,7 @@ export default function HomePage() {
         </header>
         <div className="w-full">
 
-          <h1 className="text-4xl font-extrabold text-green-600 inline-block">
+          <h1 className="text-4xl font-extrabold text-blue-600 inline-block">
             User List
           </h1>
           <p className="text-gray-600 dark:text-white mt-2">
@@ -94,7 +94,7 @@ export default function HomePage() {
             <input
               type="text"
               placeholder="Search by name, username or city..."
-              className="w-full max-w-md px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-green-500 text-gray-600 dark:text-white"
+              className="w-full max-w-md px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 text-gray-600 dark:text-white"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -135,7 +135,7 @@ export default function HomePage() {
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm">
                         <Link
                           href={`/dashboard/admin/users/${user.id}`}
-                          className="inline-block px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
+                          className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
                         >
                           View Profile
                         </Link>

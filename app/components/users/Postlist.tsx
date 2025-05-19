@@ -113,7 +113,7 @@ export const Postlist = ({ id }: PostProps) => {
                     {/* Create Post Button */}
                     <Link
                         href="/dashboard/user/post/create_posts"
-                        className="bg-green-600 text-white px-6 py-3 rounded-md mb-6 inline-block"
+                        className="bg-blue-600 text-white px-6 py-3 rounded-md mb-6 inline-block"
                     >
                         Create Post
                     </Link>
@@ -141,7 +141,7 @@ export const Postlist = ({ id }: PostProps) => {
                                         <h3>
                                             <Link
                                                 href={`/dashboard/user/post/${post.id}`}
-                                                className="font-bold text-green-600 dark:text-white text-sm sm:text-2xl block mb-4 hover:text-primary dark:hover:text-primary"
+                                                className="font-bold text-blue-600 dark:text-white text-sm sm:text-2xl block mb-4 hover:text-primary dark:hover:text-primary"
                                             >
                                                 {post.title}
                                             </Link>
@@ -171,7 +171,7 @@ export const Postlist = ({ id }: PostProps) => {
 
                                         <Link
                                             href={`/dashboard/user/post/edit/${post.id}`}
-                                            className="text-green-500 hover:text-green-600 font-medium text-sm mr-5"
+                                            className="text-blue-500 hover:text-blue-600 font-medium text-sm mr-5"
                                         >
                                             Edit
                                         </Link>

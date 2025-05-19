@@ -1,140 +1,3 @@
-
-// "use client";
-
-// import { useForm } from "react-hook-form";
-// import { zodResolver } from "@hookform/resolvers/zod";
-// import { z } from "zod";
-// import Link from "next/link";
-// import "leaflet/dist/leaflet.css";
-// import LeafletMap from "../../components/LeafletMap";
-
-// const registrationSchema = z
-//   .object({
-//     firstName: z.string().min(2, "First name is required"),
-//     lastName: z.string().min(2, "Last name is required"),
-//     email: z.string().email("Invalid email"),
-//     phone: z.string().min(10, "Enter a valid phone number"),
-//     address: z.string().min(5, "Please select an address"),
-//     password: z.string().min(6, "Password must be at least 6 characters"),
-//     confirmPassword: z.string().min(6),
-//   })
-//   .refine((data) => data.password === data.confirmPassword, {
-//     message: "Passwords do not match",
-//     path: ["confirmPassword"],
-//   });
-
-// type FormData = z.infer<typeof registrationSchema>;
-
-// export default function RegistrationForm() {
-//   const {
-//     register,
-//     handleSubmit,
-//     setValue,
-//     formState: { errors },
-//   } = useForm<FormData>({
-//     resolver: zodResolver(registrationSchema),
-//   });
-
-  
-//   const onAddressSelect = (address: string) => {
-//     setValue("address", address);
-//   };
-
-//   const onSubmit = (data: FormData) => {
-//     localStorage.setItem("registeredUser", JSON.stringify(data));
-//     alert("Registration successful!");
-//   };
-
-//   return (
-//     <section className="bg-gray-50 dark:bg-gray-900">
-//       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
-//         <div className="max-w-2xl lg:max-w-4xl mx-auto text-center">
-//           <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white">Create Your Account</h2>
-//           <p className="mt-4 text-lg text-gray-900 dark:text-white">Register with your details and location.</p>
-//         </div>
-
-//         <div className="mt-16 lg:mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
-//           <div className="rounded-lg overflow-hidden">
-//             <LeafletMap onAddressSelect={onAddressSelect} />
-//           </div>
-
-//           <div className="bg-white p-6 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-//             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
-//               {[
-//                 { label: "First Name", name: "firstName", type: "text", placeholder: "John" },
-//                 { label: "Last Name", name: "lastName", type: "text", placeholder: "Doe" },
-//                 { label: "Email", name: "email", type: "email", placeholder: "name@company.com" },
-//                 { label: "Phone Number", name: "phone", type: "tel", placeholder: "+63 912 345 6789" },
-//                 { label: "Password", name: "password", type: "password", placeholder: "••••••••" },
-//                 { label: "Confirm Password", name: "confirmPassword", type: "password", placeholder: "••••••••" },
-//                 { label: "Address", name: "address", type: "text", placeholder: "Click marker on map..." },
-//               ].map(({ label, name, type, placeholder }) => (
-//                 <div key={name}>
-//                   <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{label}</label>
-//                   <input
-//                     {...register(name as keyof FormData)}
-//                     type={type}
-//                     className={inputClass}
-//                     placeholder={placeholder}
-//                   />
-//                   {errors[name as keyof FormData] && (
-//                     <p className="text-red-500 text-sm">
-//                       {errors[name as keyof FormData]?.message?.toString()}
-//                     </p>
-//                   )}
-//                 </div>
-//               ))}
-
-
-//               <div className="flex items-start">
-//                 <input
-//                   id="terms"
-//                   type="checkbox"
-//                   required
-//                   className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 dark:bg-gray-700 dark:border-gray-600"
-//                 />
-//                 <label htmlFor="terms" className="ml-3 text-sm text-gray-900 dark:text-white">
-//                   I accept the{" "}
-//                   <a href="#" className="font-medium text-green-600 hover:underline">
-//                     Terms and Conditions
-//                   </a>
-//                 </label>
-//               </div>
-
-//               <button
-//                 type="submit"
-//                 className="w-full text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 font-medium rounded-lg px-5 py-2.5"
-//               >
-//                 Create an account
-//               </button>
-
-//               <p className="text-sm text-gray-900 dark:text-white">
-//                 Already have an account?{" "}
-//                 <Link href="/login" className="font-medium text-green-600 hover:underline">
-//                   Login here
-//                 </Link>
-//               </p>
-//               <p className="mt-4 text-sm text-center">
-//                 <Link href="/" className="text-green-600 hover:underline">
-//                   Go Home
-//                 </Link>
-//               </p>
-//             </form>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-// const inputClass = `
-//   bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
-//   focus:ring-green-600 focus:border-green-600 block w-full p-2.5
-//   dark:bg-gray-700 dark:border-gray-600 dark:text-white
-// `;
-
-
-
 "use client";
 
 import { useForm } from "react-hook-form";
@@ -285,11 +148,11 @@ export default function RegistrationForm() {
                 <input
                   type="checkbox"
                   required
-                  className="w-4 h-4 rounded border-gray-300 text-green-600 focus:ring-green-500"
+                  className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                 />
                 <label className="text-sm text-gray-600 dark:text-gray-300">
                   I accept the{" "}
-                  <a href="#" className="text-green-600 hover:text-green-500">
+                  <a href="#" className="text-blue-600 hover:text-blue-500">
                     Terms and Conditions
                   </a>
                 </label>
@@ -300,8 +163,8 @@ export default function RegistrationForm() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full py-3 px-4 text-white bg-gradient-to-r from-green-600 to-green-700 rounded-lg 
-                          hover:from-green-700 hover:to-green-800 focus:ring-4 focus:ring-green-300 
+                className="w-full py-3 px-4 text-white bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg 
+                          hover:from-blue-700 hover:to-blue-800 focus:ring-4 focus:ring-blue-300 
                           font-medium text-sm transition-all duration-300"
               >
                 Create Account
@@ -311,13 +174,13 @@ export default function RegistrationForm() {
               <div className="text-center space-y-2">
                 <p className="text-sm text-gray-600 dark:text-gray-300">
                   Already have an account?{" "}
-                  <Link href="/login" className="text-green-600 hover:text-green-500 font-medium">
+                  <Link href="/login" className="text-blue-600 hover:text-blue-500 font-medium">
                     Sign in
                   </Link>
                 </p>
                 <Link
                   href="/"
-                  className="text-sm text-green-600 hover:text-green-500 font-medium inline-block"
+                  className="text-sm text-blue-600 hover:text-blue-500 font-medium inline-block"
                 >
                   ← Back to Home
                 </Link>
@@ -333,7 +196,7 @@ export default function RegistrationForm() {
 const inputClass = `
   w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600
   bg-white dark:bg-gray-700 text-gray-900 dark:text-white
-  focus:ring-2 focus:ring-green-500 focus:border-green-500
+  focus:ring-2 focus:ring-blue-500 focus:border-blue-500
   placeholder-gray-400 dark:placeholder-gray-300
   transition-all duration-200
 `;

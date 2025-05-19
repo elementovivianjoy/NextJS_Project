@@ -100,12 +100,12 @@ export default function Dashboard() {
               return (
                 <li key={post.id} className="border p-4 rounded shadow">
                   <Link href={`/dashboard/admin/post/${post.id}`}>
-                    <h2 className="text-xl font-semibold text-green-600 hover:underline">
+                    <h2 className="text-xl font-semibold text-blue-600 hover:underline">
                       {post.title}
                     </h2>
                   </Link>
                   <p className="text-sm text-gray-500 dark:text-white mb-1">
-                    Posted by: <strong className="text-sm text-green-900 dark:text-white mb-1">{postAuthor?.name}</strong> (@{postAuthor?.username})
+                    Posted by: <strong className="text-sm text-blue-900 dark:text-white mb-1">{postAuthor?.name}</strong> (@{postAuthor?.username})
                   </p>
                   <p className="text-gray-700 dark:text-white mt-1">{post.body}</p>
                 </li>

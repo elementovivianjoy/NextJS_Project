@@ -90,11 +90,11 @@ const TeamMemberCard: React.FC<{ member: TeamMember; index: number }> = ({ membe
         <div className="p-6 sm:w-3/5">
           <div className="space-y-2">
             <motion.h3 
-              className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-300"
+              className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300"
             >
               {member.name}
             </motion.h3>
-            <p className="text-green-600 dark:text-green-400 font-medium">
+            <p className="text-blue-600 dark:text-blue-400 font-medium">
               {member.role}
             </p>
             <p className="text-gray-600 dark:text-gray-300 text-sm">

@@ -19,7 +19,7 @@ export const UserCard = ({ user }: UserCardProps) => {
         </div>
 
         <div className="w-full mt-2 flex items-center text-sm text-gray-600">
-          <PhoneIcon className="h-5 w-5 mr-2 text-green-500" />
+          <PhoneIcon className="h-5 w-5 mr-2 text-blue-500" />
           {user.phone}
         </div>
 

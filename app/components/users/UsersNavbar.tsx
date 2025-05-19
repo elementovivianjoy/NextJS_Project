@@ -49,7 +49,7 @@ const UsersNavbar = ({ user, children }: NavbarUserProps) => {
               <div className="flex items-center space-x-2">
                 <Link href="/dashboard/user/">
                   <motion.div whileHover={{ scale: 1.05 }} className="cursor-pointer">
-                    <span className="text-2xl font-semibold bg-gradient-to-r from-green-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+                    <span className="text-2xl font-semibold bg-gradient-to-r from-blue-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
                       Hello
                     </span>
                   </motion.div>
