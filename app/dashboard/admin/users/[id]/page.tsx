@@ -33,7 +33,7 @@ export default function UserProfilePage() {
   if (userLoading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <p className="text-lg font-medium text-blue-600 animate-pulse">
+        <p className="text-lg font-medium text-blue-600 dark:text-blue-400 animate-pulse">
           Loading user profile...
         </p>
       </div>
@@ -43,7 +43,7 @@ export default function UserProfilePage() {
   if (userError) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <p className="text-lg font-medium text-red-500">
+        <p className="text-lg font-medium text-red-500 dark:text-red-400">
           Error loading user profile
         </p>
       </div>
@@ -53,7 +53,9 @@ export default function UserProfilePage() {
   if (!user) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <p className="text-lg font-medium text-yellow-600">User not found</p>
+        <p className="text-lg font-medium text-yellow-600 dark:text-yellow-400">
+          User not found
+        </p>
       </div>
     );
   }
@@ -83,31 +85,35 @@ export default function UserProfilePage() {
           </div>
         </header>
 
-        <div className="min-h-screen bg-white-900 dark:bg-gray p-6">
+        <div className="min-h-screen bg-white dark:bg-gray-900 p-6">
           <div className="max-w-4xl mx-auto">
             {/* User Profile Header */}
-            <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-              <h1 className="text-3xl font-bold text-gray-800">{user.name}</h1>
-              <p className="text-gray-600 mt-2">@{user.username}</p>
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+              <h1 className="text-3xl font-bold text-gray-800 dark:text-white">
+                {user.name}
+              </h1>
+              <p className="text-gray-600 dark:text-gray-300 mt-2">
+                @{user.username}
+              </p>
 
               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <h2 className="text-lg font-semibold text-gray-700">
+                  <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-200">
                     Contact Information
                   </h2>
-                  <p className="text-gray-600">{user.email}</p>
-                  <p className="text-gray-600">{user.phone}</p>
-                  <p className="text-gray-600">{user.website}</p>
+                  <p className="text-gray-600 dark:text-gray-300">{user.email}</p>
+                  <p className="text-gray-600 dark:text-gray-300">{user.phone}</p>
+                  <p className="text-gray-600 dark:text-gray-300">{user.website}</p>
                 </div>
 
                 <div>
-                  <h2 className="text-lg font-semibold text-gray-700">
+                  <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-200">
                     Address
                   </h2>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 dark:text-gray-300">
                     {user.address.street}, {user.address.suite}
                   </p>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 dark:text-gray-300">
                     {user.address.city}, {user.address.zipcode}
                   </p>
                 </div>
@@ -115,8 +121,8 @@ export default function UserProfilePage() {
             </div>
 
             {/* User Location Map */}
-            <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+              <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">
                 Location
               </h2>
               <div className="h-64 rounded-md overflow-hidden">

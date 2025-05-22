@@ -98,7 +98,7 @@ export default function Dashboard() {
             {posts.map((post) => {
               const postAuthor = users.find((u) => u.id === post.userId);
               return (
-                <li key={post.id} className="border p-4 rounded shadow">
+                <li key={post.id} className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                   <Link href={`/dashboard/admin/post/${post.id}`}>
                     <h2 className="text-xl font-semibold text-blue-600 hover:underline">
                       {post.title}

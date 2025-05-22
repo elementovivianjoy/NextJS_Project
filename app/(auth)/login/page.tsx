@@ -122,7 +122,7 @@ export default function LoginForm() {
 
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-green-700 transition"
+            className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-700 transition"
           >
             Login
           </button>

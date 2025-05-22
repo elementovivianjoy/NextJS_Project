@@ -119,17 +119,20 @@ export default function HomePage() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
                 {filteredUsers.length > 0 ? (
                   filteredUsers.map((user) => (
-                    <tr key={user.id} className="hover:bg-gray-50 dark:hover:bg-white">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium  text-gray-600 dark:text-white">
+                    <tr
+                      key={user.id}
+                      className="hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    >
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-700 dark:text-gray-200">
                         {user.name}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-white">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-200">
                         @{user.username}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-white">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-200">
                         {user.address.city}, {user.address.street}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm">
@@ -144,12 +147,16 @@ export default function HomePage() {
                   ))
                 ) : (
                   <tr>
-                    <td colSpan={4} className="text-center text-gray-600 dark:text-white py-4">
+                    <td
+                      colSpan={4}
+                      className="text-center text-gray-600 dark:text-gray-300 py-4"
+                    >
                       No users found.
                     </td>
                   </tr>
                 )}
               </tbody>
+
             </table>
           </div>
 
