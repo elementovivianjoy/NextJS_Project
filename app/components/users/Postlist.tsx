@@ -111,12 +111,12 @@ export const Postlist = ({ id }: PostProps) => {
                     <h2 className="text-xl mb-4">Posts</h2>
 
                     {/* Create Post Button */}
-                    <Link
+                    {/* <Link
                         href="/dashboard/user/post/create_posts"
                         className="bg-blue-600 text-white px-6 py-3 rounded-md mb-6 inline-block"
                     >
                         Create Post
-                    </Link>
+                    </Link> */}
 
                     {posts.length === 0 ? (
                         <p className="text-gray-500">You have no posts.</p>

@@ -52,7 +52,7 @@ export function NavUser({ user }: NavUserProps) {
 
   const handleLogout = () => {
     localStorage.removeItem("user")
-    router.push("/login")
+    router.push("/")
   }
 
   const { setTheme } = useTheme()
