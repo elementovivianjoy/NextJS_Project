@@ -35,9 +35,58 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-
+--------------------------------------------------------------------------------------------------------------------------------------
 Group Contribution:
 Vivian Joy Elemento - A leader for the group and the main programmer.
 Benedict Hamor - Handled the website coding.
 Joan Navarro - Wrote and organized the website content.
 Maurick Jazmin - Tested the site for funcionality.
+
+-----------------------------------------------------------------------------------
+
+Features
+User Listing: Displays user profiles fetched from JSON Placeholder with address shown on an interactive Leaflet map.
+Post & Comments: Shows posts and comments with conditional access based on user role.
+
+---------------------------------------------------------------------------------
+Login Form
+Authentication: Admin and regular user login using email and password (JSON Placeholder logic).
+Admin Login: Hardcoded credentials for instant access (username: admin@admin.com, password: admin123).
+A login system where the email is used as the username and the password is the username from the JSON Placeholder API (
+    "username": "Sincere@april.biz", "Shanna@melissa.tv", "Nathan@yesenia.net",
+    "password": "Bret", "Antonette", "Samantha",
+    ).
+User Login: Authenticates via fetched user data, requiring password to match username.
+
+
+Error Handling: Displays clear feedback for incorrect credentials or fetch errors.
+Routing & State: Uses useState and useRouter for input management and redirection.
+UX Design: Responsive layout, accessible fields, and interactive feedback using Tailwind CSS.
+
+--------------------------------------------------------------------------------------
+Registration Form
+Registration: Validated form with live address selection via map.
+Validation Rules: Includes checks for name, email, phone, address, password match, and terms acceptance.
+Form Libraries: Built with react-hook-form, validated using zod.
+Map Integration: Leaflet map enables users to visually select and populate their address.
+Data Handling: On successful validation, user data is stored in localStorage and a success alert is shown.
+
+------------------------------------------------------------------------------------------------
+Admin Dashboard
+Features:
+Data Visualization: Admin dashboard features using Apex charts showing  total users, post, and comment statistics stored in JSON Placeholder API.
+Display All Users Profile stored in JSON Placeholder API.
+Display Posts with name of posted by, and view posts and comments with their email who posted that stored in JSON Placeholder API.
+Dark Mode
+
+---------------------------------------------------------------------------------------------------
+Regular Users Dashboard
+Key Features:
+View Login User Profile with name, email, address that used from JSON Placeholder API.
+Display Posts with name of posted by, and view posts and comments with their email who posted that stored in JSON Placeholder API.
+Logout
+Dark Mode
+Delete Posts
+
+----------------------------------------------------------------------------------------------------
+Deployment: Github and Live application hosted on Vercel.
